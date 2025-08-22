@@ -2,6 +2,8 @@
 
 After seeing DHH setup Omarchy I wanted to jump in. I've been using sway for a while now and figured it was about time to setup my own installer. Also wanted to use hyprland, the new fancy wm. 
 
+Though to be clear this is more of a post setup script after using Arch Installer. It has a lot of good options + the defaults work for me. 
+
 A couple things to note though:
 * Yes, I do use themes set by DHH. I think some of the theming work is fantastic!!!
 * No, I do not use all of the defaults. Partially why I'm not installing Omarchy directly!! I have a lot of the respect for the project but this project here is for me.
