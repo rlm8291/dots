@@ -6,4 +6,5 @@ cat < ~/dots/logo.txt
 source ~/dots/setup/aur.sh
 source ~/dots/setup/config.sh
 source ~/dots/setup/development.sh
+source ~/dots/setup/desktop.sh
 
