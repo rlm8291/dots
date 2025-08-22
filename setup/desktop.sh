@@ -62,3 +62,5 @@ paru -S --noconfirm --needed \
   rofi waybar mako swaybg \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
+# Setup Extras
+paru -S 1password 1password-cli pinta gwenview spotify 
