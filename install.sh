@@ -2,4 +2,6 @@
 # Setting up my own configration installer
 cat < ~/dots/logo.txt
 
+# Installation Scripts
+source ~/dots/setup/aur.sh
 
