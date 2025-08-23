@@ -12,6 +12,9 @@ source $HOME/setup/development.sh
 source $HOME/setup/desktop.sh
 source $HOME/setup/mimetypes.sh
 
+# Setup Pictures Directory
+cp -r $HOME/dots/pictures $HOME/Pictures
+
 # Install Custom SDDM Themes
 paru -S --noconfirm --needed sddm-silent-theme
 sudo cp $HOME/sddm/sddm.conf /etc/sddm.conf
