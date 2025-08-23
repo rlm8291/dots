@@ -11,3 +11,4 @@ if ! command -v yay &>/dev/null; then
   rm -rf paru
   cd ~
 fi
+

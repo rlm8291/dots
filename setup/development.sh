@@ -9,6 +9,6 @@ paru -S --noconfirm --needed \
 
 # Setup Development Tools
 paru -S --noconfirm --needed \
-  cargo clang llvm \
+  cargo clang llvm mise \
   github-cli lazygit
 

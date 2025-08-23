@@ -2,7 +2,7 @@
 # Install Desktop Tools
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
-  wl-clip-persist nuatlilus sushi ffmpeghthumbnailer gvfs-mtp \
+  wl-clip-persist nautilus sushi ffmpeghthumbnailer gvfs-mtp \
   slurp satty libqalculate pinta \
   mpv evince imv chromium
 
@@ -15,7 +15,6 @@ fi
 
 # Setup Bluetooth
 paru -S --noconfirm --needed blueberry bluetui
-
 sudo systemctl enable --now bluetooth.service
 
 # Install Fonts
