@@ -3,7 +3,7 @@
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
   wl-clip-persist nuatlilus sushi ffmpeghthumbnailer gvfs-mtp \
-  slurp satty libqalculate \
+  slurp satty libqalculate pinta \
   mpv evince imv chromium
 
 # Add screen recorder based on GPU
