@@ -1,0 +1,22 @@
+#!/bin/bash
+# Rofi Power Menu
+lock="  Lock"
+logout="󰈆  Logout"
+reboot="  Reboot"
+shutdown="⏻  Shutdown"
+
+host=`hostname`
+uptime="`uptime -p | sed -e 's/up //g'`"
+
+CHOSEN=$(
+  printf "$lock\n$logout\n$reboot\n$shutdown" | \
+  rofi -dmenu -p "  $host" -mesg "  Uptime - $uptime" -theme "~/.config/rofi/themes/selector.rasi"
+)
+
+case "$CHOSEN" in
+  $lock) hyprlock ;;
+  $logout) hyprctl dispatch exit ;;
+  $reboot) reboot ;;
+  $shutdown) poweroff ;;
+esac
+

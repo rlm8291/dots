@@ -1,0 +1,33 @@
+#!/bin/bash
+function draw_image() {
+  hyprshot -m ${1:-region} --raw |
+  satty --filename - \
+    --output-filename "$HOME/Pictures/screenshot-$(date +'%d-%m-%Y_%H-%M').png" \
+    --early-exit \
+    --actions-on-enter save-to-clipboard \
+    --save-after-copy \
+    --copy-command 'wl-copy'
+}
+
+region="  Region"
+clip="󱉬  Clipboard"
+window="  Window"
+window_active="  Active"
+output="󱧐  Output"
+draw="󱨍  Draw"
+filename="screenshot-$(date +'%d-%m-%Y_%H-%M').png"
+
+CHOSEN=$(
+  printf "$clip\n$region\n$window\n$window_active\n$output\n$draw" | \
+  rofi -dmenu -p " Screenshot" -msg "" -theme "~/.config/rofi/themes/selector.rasi"
+)
+
+case "$CHOSEN" in
+  $clip) hyprshot -m region --clipboard-only ;;
+  $region) hyprshot -m region --filename $filename ;;
+  $window) hyprshot -m window ;;
+  $window_active) hyprshot -m active ;;
+  $output) hyprshot -m output ;;
+  $draw) draw_image ;;
+esac
+
