@@ -4,7 +4,7 @@ paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
   wl-clip-persist nautilus sushi ffmpeghthumbnailer gvfs-mtp \
   slurp satty libqalculate pinta \
-  mpv evince imv chromium
+  mpv evince imv chromium pavucontrol
 
 # Add screen recorder based on GPU
 if lspci | grep -qi 'nvidia'; then
@@ -62,4 +62,5 @@ paru -S --noconfirm --needed \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 # Setup Extras
-paru -S 1password 1password-cli pinta gwenview spotify 
+paru -S --noconfirm --needed 1password 1password-cli pinta gwenview spotify 
+

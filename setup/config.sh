@@ -6,12 +6,6 @@
 sudo sed -i 's|^\(auth\s\+required\s\+pam_faillock.so\)\s\+preauth.*$|\1 preauth silent deny=10 unlock_time=120|' "/etc/pam.d/system-auth"
 sudo sed -i 's|^\(auth\s\+\[default=die\]\s\+pam_faillock.so\)\s\+authfail.*$|\1 authfail deny=10 unlock_time=120|' "/etc/pam.d/system-auth"
 
-# Setup Git Config
-git config --global init.defaultBranch main
-git config --global pull.rebase true
-git config --global user.name "Robbie McClellan"
-git config --global user.email "rlm8291@gmail.com"
-
 # Change Systemd Options
 sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service

@@ -10,6 +10,7 @@ source ~/dots/setup/aur.sh
 source ~/dots/setup/config.sh
 source ~/dots/setup/development.sh
 source ~/dots/setup/desktop.sh
+source ~/dots/setup/mimetypes.sh
 
 # Install Custom SDDM Themes
 paru -S --noconfirm --needed sddm-silent-theme
@@ -21,6 +22,9 @@ sudo cp ~/dots/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
 sudo updatedb
 paru -Syu --noconfirm --ignore uwsm
 
+chsh -s /usr/local/bin/fish
+
 echo "Restarting...
 sleep 5
 reboot
+
