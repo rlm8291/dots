@@ -6,6 +6,7 @@ echo -e "\nStarting Installation...\n"
 sleep 5
 
 # Setup User Scripts
+rm -rf $HOME/.local/bin
 ln -sf "$HOME/dots/bin" "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -30,6 +31,7 @@ sleep 3
 cp -r $HOME/dots/pictures $HOME/Pictures
 
 # Post Install
+timezone
 sudo updatedb
 paru -Syu --noconfirm --ignore uwsm
 
