@@ -1,6 +1,6 @@
 #!/bin/bash
 # Setup Symbolic Links .config
-DIR=$HOME/dots/config
+DIR=$HOME/dots
 
 DOTFILES=(
   ".config/alacritty"

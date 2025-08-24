@@ -1,0 +1,9 @@
+[Unit]
+Description=Personal Battery Monitor Check
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/battery-monitor
+Environment=Display=:0
+

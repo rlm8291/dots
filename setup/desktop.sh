@@ -18,7 +18,7 @@ paru -S --noconfirm --needed blueberry bluetui
 sudo systemctl enable --now bluetooth.service
 
 # Install Fonts
-paru -S --noconfirm --needed ttf-nerd-fonts-symbols ttf-cascadia-code-nerd
+paru -S --noconfirm --needed ttf-nerd-fonts-symbols ttf-cascadia-code-nerd ttf-cascadia-code-mono-nerd
 
 # Use dark mode for QT apps too (like kdenlive)
 if ! paru -Q kvantum-qt5 &>/dev/null; then
@@ -57,9 +57,25 @@ sudo systemctl enable --now cups-browsed.service
 
 # Install Additional Hyprland Packages
 paru -S --noconfirm --needed \
+  hyprland \
   hyprshot hyprlock hypridle polkit-gnome hyprland-qutils \
-  rofi waybar mako swaybg \
+  rofi-wayland waybar mako swaybg \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
+# Setting SDDM for login
+if paru -Q "sddm" &>/dev/null; then
+  echo "Package Installled Already!!!"
+else
+  paru -S --noconfirm --needed sddm
+  sudo systemctl enable sddm
+  sudo systemctl start sddm
+  
+  # Install Custom SDDM Themes
+  paru -S --noconfirm --needed sddm-silent-theme
+  sudo cp $HOME/dots/sddm/custom.conf /usr/share/sddm/themes/silent/configs/
+  sudo cp $HOME/dots/sddm/metadata.desktop /usr/share/sddm/themes/silent/
+  sudo cp $HOME/dots/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
+fi
 
 # Setup Extras
 paru -S --noconfirm --needed 1password 1password-cli pinta gwenview spotify 

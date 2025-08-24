@@ -1,0 +1,12 @@
+[Unit]
+Description=Personal Battery Monitor Timer
+Requires=battery-monitor.service
+
+[Timer]
+OnBoot=2min
+OnUnitActiveSec=60sec
+AccuracySec=10sec
+
+[Install]
+WantedBy=timers.target
+
