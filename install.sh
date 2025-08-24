@@ -31,7 +31,7 @@ sleep 3
 cp -r $HOME/dots/pictures $HOME/Pictures
 
 # Post Install
-timezone
+sudo tzupdate
 sudo updatedb
 paru -Syu --noconfirm --ignore uwsm
 
