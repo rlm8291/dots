@@ -1,6 +1,6 @@
 #!/bin/bash
 # Setting up my own configration installer
-cat < $HOME/logo.txt
+cat < $HOME/dots/logo.txt
 
 echo "Starting Installation..."
 sleep 5
@@ -17,7 +17,7 @@ cp -r $HOME/dots/pictures $HOME/Pictures
 
 # Install Custom SDDM Themes
 paru -S --noconfirm --needed sddm-silent-theme
-sudo cp $HOME/dots/sddm/sddm.conf /etc/sddm.conf
+sudo cp $HOME/dots/sddm/custom.conf /etc/sddm.conf
 sudo cp $HOME/dots/sddm/metadata.desktop /usr/share/sddm/themes/silent/
 sudo cp $HOME/dots/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
 
