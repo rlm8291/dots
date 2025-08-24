@@ -6,23 +6,23 @@ echo "Starting Installation..."
 sleep 5
 
 # Installation Scripts
-source $HOME/setup/aur.sh
-source $HOME/setup/config.sh
-source $HOME/setup/development.sh
-source $HOME/setup/desktop.sh
-source $HOME/setup/mimetypes.sh
+source $HOME/dots/setup/aur.sh
+source $HOME/dots/setup/config.sh
+source $HOME/dots/setup/development.sh
+source $HOME/dots/setup/desktop.sh
+source $HOME/dots/setup/mimetypes.sh
 
 # Setup Pictures Directory
 cp -r $HOME/dots/pictures $HOME/Pictures
 
 # Install Custom SDDM Themes
 paru -S --noconfirm --needed sddm-silent-theme
-sudo cp $HOME/sddm/sddm.conf /etc/sddm.conf
-sudo cp $HOME/sddm/metadata.desktop /usr/share/sddm/themes/silent/
-sudo cp $HOME/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
+sudo cp $HOME/dots/sddm/sddm.conf /etc/sddm.conf
+sudo cp $HOME/dots/sddm/metadata.desktop /usr/share/sddm/themes/silent/
+sudo cp $HOME/dots/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
 
 # Setup Symlinks for Configuration
-source $HOME/setup/symlinks.sh
+source $HOME/dots/setup/symlinks.sh
 
 # Setup user scripts
 ln -sf "$HOME/dots/bin" "$HOME/.local/bin"
