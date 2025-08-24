@@ -2,7 +2,7 @@
 # Install Desktop Tools
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
-  wl-clip-persist nautilus sushi ffmpeghthumbnailer gvfs-mtp \
+  wl-clip-persist nautilus sushi ffmpegthumbnailer gvfs-mtp \
   slurp satty libqalculate plocate \
   mpv evince imv chromium pavucontrol
 
@@ -18,7 +18,7 @@ paru -S --noconfirm --needed blueberry bluetui
 sudo systemctl enable --now bluetooth.service
 
 # Install Fonts
-paru -S --noconfirm --needed ttf-nerd-fonts-symbols ttf-cascadia-code-nerd ttf-cascadia-code-mono-nerd
+paru -S --noconfirm --needed ttf-nerd-fonts-symbols ttf-cascadia-code-nerd ttf-cascadia-mono-nerd
 
 # Use dark mode for QT apps too (like kdenlive)
 if ! paru -Q kvantum-qt5 &>/dev/null; then
