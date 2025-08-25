@@ -13,6 +13,7 @@ DOTFILES=(
   ".config/rofi"
   ".config/systemd"
   ".config/waybar"
+  ".config/chromium-flags.conf"
   ".bashrc"
 )
 
