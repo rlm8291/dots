@@ -21,6 +21,7 @@ sleep 3
 
 source $HOME/dots/setup/aur.sh
 source $HOME/dots/setup/config.sh
+source $HOME/dots/setup/nvidia.sh
 source $HOME/dots/setup/development.sh
 source $HOME/dots/setup/desktop.sh
 source $HOME/dots/setup/mimetypes.sh
