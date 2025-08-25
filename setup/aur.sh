@@ -1,6 +1,6 @@
 #!/bin/bash
 # Setup the hand dandy AUR tool called Paru
-if ! command -v yay &>/dev/null; then
+if ! command -v paru &>/dev/null; then
   sudo pacman -Sy --needed --noconfirm base-devel
   cd /tmp
   rm -rf paru
