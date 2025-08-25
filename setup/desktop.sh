@@ -68,7 +68,6 @@ if paru -Q "sddm" &>/dev/null; then
 else
   paru -S --noconfirm --needed sddm
   sudo systemctl enable sddm
-  sudo systemctl start sddm
   
   # Install Custom SDDM Themes
   paru -S --noconfirm --needed sddm-silent-theme
