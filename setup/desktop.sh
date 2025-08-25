@@ -1,7 +1,11 @@
 #!/bin/bash
+# Setup Basic User Configuration
+paru -S xdg-user-dirs
+xdg-user-dirs-update
+
 # Install Additional Hyprland Packages
 paru -S --noconfirm --needed \
-  hyprland \
+  hyprland uwsm libnewt \
   hyprshot hyprlock hypridle polkit-gnome hyprland-qtutils \
   rofi-wayland waybar mako swaybg \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
@@ -74,6 +78,7 @@ else
   sudo cp $HOME/dots/sddm/custom.conf /usr/share/sddm/themes/silent/configs/
   sudo cp $HOME/dots/sddm/metadata.desktop /usr/share/sddm/themes/silent/
   sudo cp $HOME/dots/sddm/techno_city.png /usr/share/sddm/themes/silent/backgrounds/
+  sudo cp $HOME/dots/sddm/sddm.conf /etc/
 fi
 
 # Setup Extras

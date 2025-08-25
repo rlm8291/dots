@@ -6,9 +6,9 @@ echo -e "\nStarting Installation...\n"
 sleep 5
 
 # Setup User Scripts
-rm -rf $HOME/.local/bin
 ln -sf "$HOME/dots/bin" "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
+mkdir ~/.config
 
 # Setup Symlinks for Configuration
 echo -e "\nSetting Up Symlinks....\n"
