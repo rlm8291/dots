@@ -1,4 +1,11 @@
 #!/bin/bash
+# Install Additional Hyprland Packages
+paru -S --noconfirm --needed \
+  hyprland \
+  hyprshot hyprlock hypridle polkit-gnome hyprland-qtutils \
+  rofi-wayland waybar mako swaybg \
+  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
 # Install Desktop Tools
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
@@ -54,13 +61,6 @@ if ! grep -q '^CreateRemotePrinters Yes' /etc/cups/cups-browsed.conf; then
 fi
 
 sudo systemctl enable --now cups-browsed.service
-
-# Install Additional Hyprland Packages
-paru -S --noconfirm --needed \
-  hyprland \
-  hyprshot hyprlock hypridle polkit-gnome hyprland-qutils \
-  rofi-wayland waybar mako swaybg \
-  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
 # Setting SDDM for login
 if paru -Q "sddm" &>/dev/null; then
