@@ -29,7 +29,7 @@ source $HOME/dots/setup/mimetypes.sh
 # Setup Pictures Directory
 echo -e "\nAdding Pictures...\n"
 sleep 3
-cp -r $HOME/dots/pictures $HOME/Pictures
+cp -r $HOME/dots/pictures/* $HOME/Pictures
 
 # Post Install
 sudo tzupdate
