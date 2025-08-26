@@ -14,7 +14,7 @@ paru -S --noconfirm --needed \
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
   wl-clip-persist nautilus sushi ffmpegthumbnailer gvfs-mtp \
-  slurp satty libqalculate plocate \
+  slurp satty libqalculate plocate qview \
   mpv evince imv chromium pavucontrol
 
 # Add screen recorder based on GPU
