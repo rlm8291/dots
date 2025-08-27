@@ -1,6 +1,5 @@
 #!/bin/bash
 # Setting up my configuration!
-# cp -R ~/dots/config ~/.config/
 
 # Increasing Lockout Requirements
 sudo sed -i 's|^\(auth\s\+required\s\+pam_faillock.so\)\s\+preauth.*$|\1 preauth silent deny=10 unlock_time=120|' "/etc/pam.d/system-auth"

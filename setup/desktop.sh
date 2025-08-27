@@ -63,7 +63,7 @@ sudo systemctl enable --now cups-browsed.service
 
 # Setting SDDM for login
 if paru -Q "sddm" &>/dev/null; then
-  echo "Package Installled Already!!!"
+  echo "SDDM Installled Already!!!"
 else
   paru -S --noconfirm --needed sddm
   sudo systemctl enable sddm

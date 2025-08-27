@@ -10,5 +10,7 @@ if ! command -v paru &>/dev/null; then
   cd -
   rm -rf paru
   cd ~
+else
+  echo -e "\nParu is already installed!!!\n"
 fi
 
