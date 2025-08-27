@@ -12,5 +12,8 @@ A couple things to note though:
     * [rofi-themes](https://github.com/newmanls/rofi-themes-collection)
     * [Silent SDDM Theme](https://github.com/uiriansan/SilentSDDM)
 
+For when I'm interested in setting up, it's fairly easy to follow Arch Wiki + the guide on this repo to get a good Plymouth setup. 
+    * [Plyhouth Themes](https://github.com/adi1090x/plymouth-themes)
+
 # Wallpapers TBD
 
