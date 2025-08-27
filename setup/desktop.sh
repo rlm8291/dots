@@ -14,7 +14,7 @@ paru -S --noconfirm --needed \
 paru -S --noconfirm --needed \
   brightnessctl playerctl pamixer wiremix wireplumber \
   wl-clip-persist nautilus sushi ffmpegthumbnailer gvfs-mtp \
-  slurp satty libqalculate plocate qview \
+  slurp satty libqalculate plocate papirus-icon-theme \
   mpv evince imv chromium pavucontrol
 
 # Add screen recorder based on GPU
@@ -41,14 +41,9 @@ if ! paru -Q gnome-themes-extra &>/dev/null; then
   paru -S --noconfirm gnome-themes-extra # Adds Adwaita-dark theme
 fi
 
-# Allow icons to match the theme
-if ! paru -! yaru-icon-theme &>/dev/null; then
-  paru -S --noconfirm yaru-icon-theme
-fi
-
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
 
 # Setup Compatibility for Printers
 sudo pacman -S --noconfirm cups cups-pdf cups-filters cups-browsed system-config-printer avahi nss-mdns
@@ -82,5 +77,5 @@ else
 fi
 
 # Setup Extras
-paru -S --noconfirm --needed 1password 1password-cli pinta gwenview spotify 
+paru -S --noconfirm --needed 1password 1password-cli pinta spotify qview brave-bin 
 
