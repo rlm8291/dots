@@ -1,0 +1,8 @@
+#!/bin/bash
+selected_image=$(imv -c "bind <Return> exec echo \$imv_current_file; quit" ~/dots/pictures)
+
+echo "You selected: $selected_image"
+ln -sf $selected_image $HOME/Pictures/current
+
+pkill -x swaybg
+setsid uwsm app -- swaybg -i "$selected_image" -m fill >/dev/null 2>&1 &

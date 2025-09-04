@@ -46,7 +46,7 @@
   },
   "custom/icon": {
     "format": " ",
-    "on-click": "rofi -show drun",
+    "on-click": "power-menu",
     "tooltip-format": "Rofi Menu\n\nSuper + R"
   },
   "cpu": {
