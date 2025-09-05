@@ -23,9 +23,9 @@ source $HOME/dots/setup/desktop.sh
 source $HOME/dots/setup/mimetypes.sh
 
 # Setup Pictures Directory
-echo -e "\nAdding Pictures...\n"
+echo -e "\nSetup Initial Wallpaper...\n"
 sleep 3
-cp -r $HOME/dots/pictures/* $HOME/Pictures
+ln -sf $HOME/dots/pictures/dredge.jpeg ~/Pictures/current
 
 # Post Install
 sudo tzupdate
