@@ -41,8 +41,8 @@ white      = "#ECE1D7"
 foreground = "#ECE1D7"
 background = "#292522"
 [colors.selection]
-background = "#403e41"
-text = "#C1A78E"
+background = "#34302C"
+text = "#EBC06D"
 [colors.cursor]
 cursor = '#c3b7b8'
 text = '#c3b7b8'

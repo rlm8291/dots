@@ -20,6 +20,7 @@ source ~/.config/fish/alias.fish
 # PATH Change
 set -Ua fish_user_paths $HOME/.local/bin
 set -x GOPATH $HOME/.local/go-pkg
+set -x GOBIN $GOPATH/bin
 
 # Global Envs
 set -x HYPRSHOT_DIR $HOME/screenshots
