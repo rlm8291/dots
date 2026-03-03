@@ -1,0 +1,18 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1772285883024417595 @name=Emacs
+window-rule {
+    match app-id="^Emacs$"
+    focus-ring {
+        off
+    }
+}
+
+window-rule {
+    match title="^ORG JOURNAL$"
+    match title="Emacs Everywhere"
+
+    default-column-width { proportion 0.5; }
+    open-floating true
+}
