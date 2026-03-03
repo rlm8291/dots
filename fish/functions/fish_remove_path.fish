@@ -1,0 +1,14 @@
+# Remove PATH from Fish Paths
+function fish_remove_path
+    if set -l index (contains -i $argv[1] $PATH)
+        set --erase PATH[$index]
+        echo "Updated PATH: $PATH"
+    end
+
+    if set -l index (contains -i $argv[1] $fish_user_paths)
+        set --erase --universal fish_user_paths[$index]
+        echo "Updated fish_user_paths: $fish_user_paths"
+    else
+        echo "$argv[1] not found in fish_user_paths: $fish_user_paths"
+    end
+end
