@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: Project Notes
+# key: project_notes
+# condition: t
+# --
+
+#+TITLE: Project Notes
+#+CREATED: __%Y-%m-%d %a__
+#+SOURCE: [[][]]
+
+* Project Notes
+  :PROPERTIES:
+  :ARCHIVE: archive.org::* Project Notes
+  :END:
+* Project Decisions
+  :PROPERTIES:
+  :ARCHIVE: archive.org::* Project Decisions
+  :END:
+* Project Meetings
+  :PROPERTIES:
+  :ARCHIVE: archive.org::* Project Meetings
+  :END:

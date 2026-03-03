@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compline Colors - Original vs Brightened</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1d21;
+            color: #f0efeb;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #8b919a;
+            margin-bottom: 40px;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .color-card {
+            background: #22262b;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-swatch:hover::after {
+            content: 'Click to copy';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .color-info {
+            padding: 15px;
+        }
+        
+        .color-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .color-value {
+            font-family: 'Courier New', monospace;
+            color: #8b919a;
+            font-size: 0.9em;
+            margin: 3px 0;
+        }
+        
+        .copied-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #b4bcc4;
+            color: #1a1d21;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .copied-notification.show {
+            opacity: 1;
+        }
+        
+        .note {
+            background: #22262b;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #b4bcc4;
+            margin-bottom: 30px;
+        }
+        
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #b4bcc4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compline Saturated Palette</h1>
+        <p class="subtitle">Enhanced colors for better visibility</p>
+        
+        <div class="note">
+            <div class="note-title">About This Palette</div>
+            <p>These colors have been saturated for better visibility while maintaining Compline's contemplative aesthetic. Yellow and orange receive extra saturation and brightness, while purple is slightly desaturated to blend naturally with the scheme.</p>
+        </div>
+        
+        <div class="color-grid" id="color-grid"></div>
+    </div>
+    
+    <div class="copied-notification" id="notification">Copied to clipboard!</div>
+    
+    <script>
+        const colors = [
+            {
+                name: 'Red',
+                original: { hex: '#cdacac', rgb: '205 172 172' },
+                brightened: { hex: '#e09898', rgb: '224 152 152' }
+            },
+            {
+                name: 'Orange',
+                original: { hex: '#ccc4b4', rgb: '204 196 180' },
+                brightened: { hex: '#f1cba7', rgb: '241 203 167' }
+            },
+            {
+                name: 'Yellow',
+                original: { hex: '#d4ccb4', rgb: '212 204 180' },
+                brightened: { hex: '#f2e1af', rgb: '242 225 175' }
+            },
+            {
+                name: 'Green',
+                original: { hex: '#b8c4b8', rgb: '184 196 184' },
+                brightened: { hex: '#a4d7a4', rgb: '164 215 164' }
+            },
+            {
+                name: 'Blue',
+                original: { hex: '#b4bcc4', rgb: '180 188 196' },
+                brightened: { hex: '#9fbbd8', rgb: '159 187 216' }
+            },
+            {
+                name: 'Purple',
+                original: { hex: '#b4b4c4', rgb: '180 180 196' },
+                brightened: { hex: '#bba5d1', rgb: '187 165 209' }
+            },
+            {
+                name: 'Gray',
+                original: { hex: '#8b919a', rgb: '139 145 154' },
+                brightened: { hex: '#52555a', rgb: '82 85 90' }
+            },
+            {
+                name: 'Teal',
+                original: { hex: '#b4c0c8', rgb: '180 192 200' },
+                brightened: { hex: '#9ccfde', rgb: '156 207 222' }
+            }
+        ];
+        
+        function createColorCard(color) {
+            return `
+                <div class="color-card">
+                    <div class="color-swatch" style="background: ${color.brightened.hex}" 
+                         onclick="copyToClipboard('${color.brightened.hex}')"></div>
+                    <div class="color-info">
+                        <div class="color-name">${color.name}</div>
+                        <div class="color-value">${color.brightened.hex}</div>
+                        <div class="color-value">rgb(${color.brightened.rgb})</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById('notification');
+                notification.textContent = `Copied ${text}!`;
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            });
+        }
+        
+        document.getElementById('color-grid').innerHTML = colors.map(createColorCard).join('');
+    </script>
+</body>
+</html>

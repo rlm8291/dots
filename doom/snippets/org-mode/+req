@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: Requirements Template
+# uuid:
+# key: +req
+# condition: (doom-snippets-without-trigger (bobp))
+# --
+
+#+TITLE: Requirements Document
+#+AUTHOR: Robert McClellan
+#+CREATED: __%Y-%m-%d %a %H:%M__
+#+SOURCE: [[][]]
+#+FILETAGS: :work:requirements:
+
+* Introduction
+  - Provide an overview of the feature being requested. Providing context and what the goal of the feature is
+  - Expected Delivery Dates of the feature should be listed when possible
+* Feature Description
+  - Detailed description of the feature being requested, breaking down the entirety of the structure and/or process.
+  - Be as detailed as possible while maintaining a clear goal to request an enhancement. Remember other documents can be worked on to provide context
+* Scope - Permissions
+  - Provide details and usage of the feature based on across the portals being utilized for this enhancement
+* Scope - Dependencies
+  - List out any module that is going to be tied in for the enhancement being requested. Providing how the module will be used.
+* Supporting Documentation
+  - Provide an outline of how testing will be handled and processed for the enhancement.
+* Deliverables
+  - Inclusion of the documents that either will or have relations to this enhancement. Providing either the planned target dates or context of aspects of the enhancement.
+  - Provide details and targets for the enhancement, providing dates on when documents will be provided and/or released.

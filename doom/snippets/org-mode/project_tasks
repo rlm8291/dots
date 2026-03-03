@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Project Tasks
+# key: project_tasks
+# condition: t
+# --
+
+#+TITLE: Project Tasks
+#+CREATED: __%Y-%m-%d %a %H:%M__
+#+SOURCE: [[][]]
+
+* Project Tasks
+  :PROPERTIES:
+  :ARCHIVE: archive.org::* Project Tasks
+  :END:
