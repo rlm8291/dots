@@ -17,3 +17,7 @@ set -x EDITOR nvim
 
 # Source Aliases
 source ~/.config/fish/alias.fish
+
+# GO Configuration
+set -gx GOPATH $HOME/.local/go
+set -gx GOBIN $HOME/.local/go/bin
